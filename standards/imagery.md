@@ -45,6 +45,15 @@ Why:
 - Log every non-original image in `assets.md`: file, source, model or tool, prompt or edit, date, release or consent reference, label shown.
 - MX health promotional material shows the clinician's cédula profesional and issuing institution (LGS Art. 83). Whether a site needs a COFEPRIS aviso de publicidad: confirm per client.
 
+## Video
+
+- AI video follows the same table as stills: no AI-generated clinicians, staff or patients.
+- Real premises may get ambient motion only (light, sky, foliage). Nothing added, removed or changed.
+- Seedance blocks real faces as a starting frame; don't work around it.
+- Real footage of staff needs the same signed release as photos.
+- Log each clip in `assets.md`: model, prompt, start and end frames, takes, cost.
+
 ## Changelog
 
 - 2026-10-14: v1.
+- 2026-10-22: Video section added.

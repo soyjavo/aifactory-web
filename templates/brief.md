@@ -37,3 +37,9 @@ S0 Discovery · Run: <Notion link> · Date:
 
 ## SEO tier
 - T1 / T2 / T3 and why:
+
+## Approach
+- Experience level: Calm / Expressive, and why
+- Production budget: generation spend · hours
+- Real assets available for motion (footage, photos, premises):
+- Sites the client points to, and what they like about them:

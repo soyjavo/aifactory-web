@@ -12,11 +12,14 @@ Taste here is a written set of decisions made before any tool generates anything
    - 3–4 references: territory signature. Adopt unless it conflicts with the one thing.
    - 1–2 references: candidate. Adopt only with a brand-fit reason.
    - Used by every site in the client's industry: question it. It's probably the default we're escaping.
-4. **Tokens.** Type scale, color roles, spacing, radius, shadow, motion profile → `tokens.json`.
-5. **Comps.** Claude Design (`/design`, `/design-sync` against the repo) for the home page and one interior page. Iterate there, lock, then build.
-6. **Pre-flight** (below), when S2 closes and again at S7.
+4. **Concepts.** Three concepts built only from `capabilities.md`, within the brief's experience level and budget. Each has one signature moment that makes the one thing visible, a scroll narrative, and its cost, page weight and risks. Francisco picks; the client approves.
+5. **Storyboard.** The picked concept, scene by scene: what each section explains, the medium, start and end frame prompts, video prompt, length, phone fallback, size budget.
+6. **Produce.** Stills, then video, then compression. Everything logged in `assets.md`.
+7. **Tokens.** Type scale, color roles, spacing, radius, shadow, motion profile → `tokens.json`.
+8. **Comps.** Claude Design (`/design`, `/design-sync` against the repo) for the home page and one interior page, using the real produced assets. Iterate there, lock, then build.
+9. **Pre-flight** (below), when S2 closes and again at S7.
 
-All of it is written in `sites/<slug>/direction.md`.
+Written in `sites/<slug>/`: `direction.md`, `concepts.md`, `storyboard.md`, `assets.md`.
 
 ## House principles
 
@@ -79,3 +82,4 @@ Allowed only when `direction.md` names the exception and the reason.
 ## Changelog
 
 - 2026-10-14: v1.
+- 2026-10-22: Concepts, storyboard and production steps added to the S2 method.

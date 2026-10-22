@@ -6,7 +6,7 @@ Site code lives in each site's own repo under `soyjavo/`. State (Sites, Runs) li
 
 | Folder | Holds |
 |---|---|
-| `standards/` | Source of truth: stack, taste, imagery, SEO, motion, S8 cycle. Mirrored to Notion. |
-| `templates/` | Starting point for each stage artifact. |
+| `standards/` | Source of truth: stack, capabilities, taste, imagery, SEO, motion, S8 cycle. Mirrored to Notion. |
+| `templates/` | Starting point for each stage artifact (brief, architecture, direction, concepts, storyboard, assets). |
 | `sites/<slug>/` | Stage artifacts for one site. |
 | `.claude/skills/` | Department skills (`El [Nombre]`) and vendored third-party skills at pinned commits. |
