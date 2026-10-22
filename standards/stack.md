@@ -27,6 +27,7 @@ Cloudflare's self-serve terms forbid signing up on behalf of a third party.
 - Own brands (AI Factory Systems, InteliMX, AIFactory Health): the company Cloudflare account.
 - Client sites: the client's own Cloudflare account with us invited, or the Cloudflare Self-Serve Agency program. Never a client site on the company account.
 - Vercel Hobby is never used for paid work: its terms count consultant-built and paid-hosting sites as commercial.
+- Netlify: legacy only, no new sites. On Netlify's credit-based Free plan, one project going over its limit pauses every project on the account until the next cycle, so client sites never sit on a Free account. A Netlify site moves to Cloudflare when it enters a redesign run.
 
 ## Exceptions
 
@@ -38,7 +39,8 @@ A different stack needs a reason written in the Site record's "Stack exception r
 
 ## Lovable
 
-- Plan: Free. GitHub sync, existing projects, published apps and already-connected custom domains keep working on Free. New custom domains need a paid plan.
+- Plan: Free. GitHub sync (all plans), existing projects, published pages and already-connected custom domains keep working on Free. New custom domains need a paid plan.
+- **Lovable Cloud and AI features run on credits.** A project using Lovable Cloud (database, auth, storage, server functions) or AI at runtime depends on Lovable credits even when its front end is hosted elsewhere. Free grants 20 Cloud and 4 AI credits a month; when they run out, the backend and AI pause until the 1st of the month. Pages keep serving; data is kept but can't be exported while paused. Move such backends to our own Supabase before downgrading.
 - Allowed: a quick client-facing concept during S2. Re-subscribe to Pro monthly for that sprint only.
 - Not allowed: the production code path. Code lives in GitHub and is edited with Claude Code.
 
@@ -50,3 +52,4 @@ A different stack needs a reason written in the Site record's "Stack exception r
 ## Changelog
 
 - 2026-10-14: v1. Default moves from "Lovable + Claude Code → Netlify" to "Claude Code + Astro → Cloudflare". Lovable downgraded to Free.
+- 2026-10-22: Added the Lovable Cloud credit dependency and the Netlify legacy-hosting rule.
