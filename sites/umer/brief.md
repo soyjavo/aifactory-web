@@ -147,7 +147,7 @@ Local search is thin: no competitor in town has a strong website. Visibility is 
 
 **Operational:**
 - Stack: moves to the default (Astro → Cloudflare) in this run; no exception needed. The site needs its own Cloudflare account (client's, with us invited, or the agency program) — never the company account (`stack.md`).
-- DNS is already on Cloudflare (nameservers `keanu` / `rachel`), in an account under an email other than Francisco's; whose is not yet known. If it's the company account, the zone moves to the client's account or the agency program before launch. The A record points at Lovable. The domain's email runs on Google Workspace (MX + SPF): the cutover must not touch those records.
+- The domain is **registered** with Cloudflare Registrar (registered 2025-06-26, expires 2027-06-26) and its DNS runs there too. Both sit in another of Francisco's own Cloudflare accounts, so UMER doesn't own its domain today. Recommended: before launch, move the domain to a Cloudflare account UMER owns, with Francisco invited as administrator (or use the agency program). Registrar domains need Cloudflare's manual inter-account transfer, not the normal re-add. Do it about a week before launch with the site unchanged, so a DNS problem can't tangle with the new site. The A record points at Lovable. The domain's email runs on Google Workspace (MX + SPF): the cutover must not touch those records.
 - Dra. Solís has her own site (`dra-fernanda-solis` run). Her clinician page here and her own site must link to each other without competing for the same queries — settle in S1 for both.
 - Content should read from the KB, so a change to hours or services is made once.
 
@@ -225,7 +225,7 @@ Francisco, 2026-10-23: build the page structure so the next clinic can reuse it.
 | 9 | Photo session: photographer, date (Tuesday or Saturday morning), cost | Francisco + client | S2 |
 | 10 | Does a release exist for the Solís + Rentería hero photo? Logo vector? | Client | S2 |
 | 11 | Show prices on the site? | Client | S3 |
-| 12 | The DNS zone sits in a Cloudflare account under another email (Francisco, 2026-10-23). Whose is it? If it's the client's, they invite Francisco as a member; if not, the zone moves to an account the client owns | Francisco / client | S7 |
+| 12 | Domain and DNS are in another of Francisco's Cloudflare accounts. Move them to a Cloudflare account UMER owns (opened with a clinic email), with Francisco as administrator, about a week before launch? Also add a UMER Google account as owner in Search Console | Francisco + client | S7 |
 | 13 | Booking channel and first-visit flag recorded by the sync; a demo Sofía and number | Delivery | Showcase, before launch |
 | 14 | Showcase consent, footer-credit brand, local-competitor policy | HQ | Showcase |
 | 15 | Redesign terms and retainer | HQ | S4 |
