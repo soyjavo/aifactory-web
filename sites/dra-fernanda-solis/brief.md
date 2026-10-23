@@ -54,7 +54,7 @@ No competitor surfaced with a strong website. Visibility is decided on Doctorali
 
 ## Current site
 - **Stack · hosting · repo:** Lovable-generated Vite + React SPA (shadcn, framer-motion), Lovable project `88729961…`. Repo `soyjavo/dra-fernada-solis-website` **confirmed**; last commit 2026-02-01, edited with Claude Code. **Hosted on Netlify** (`server: Netlify`, `x-nf-request-id`, Netlify Edge cache) — legacy hosting under `stack.md`. No Lovable Cloud or Supabase dependency. Netlify site `dra-fernanda-solis-website` (`www` CNAME), apex A record 75.2.60.5 (Netlify). Netlify account and plan unknown: if it's a Free account shared with other client sites, one overage pauses all of them.
-- **DNS:** on Cloudflare, nameservers `keanu` / `rachel` — the same pair as umermedical.com, so very likely the same Cloudflare account. No MX records (her email is on outlook.com), so the cutover touches no mail. One TXT `google-site-verification` record, and with no Google Workspace on the domain it is almost certainly a Search Console domain property.
+- **DNS:** on Cloudflare, nameservers `keanu` / `rachel` — the same pair as umermedical.com, whose zone sits in an account under an email other than Francisco's (UMER brief), so very likely that same account. No MX records (her email is on outlook.com), so the cutover touches no mail. The TXT `google-site-verification` record verifies the Search Console domain property: it must survive the cutover.
 - **Rendering:** `index.html` holds a static copy of the home content for crawlers (that's the "full content in HTML"); React replaces it on load. Only the home page has it.
 
 **What's live and wrong** — two of these are urgent:
