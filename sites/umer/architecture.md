@@ -1,5 +1,5 @@
 # Architecture — umermedical.com
-S1 Architecture · reads `brief.md` (2026-10-23), `standards/seo.md` (T1 + T2), `standards/stack.md` · Date: 2026-10-23 · Status: **draft for Francisco's sign-off** (see §Open for sign-off)
+S1 Architecture · reads `brief.md` (2026-10-23), `standards/seo.md` (T1 + T2), `standards/stack.md` · Date: 2026-10-23 · Status: **approved by Francisco 2026-10-23**; doctor inputs 4–7 still open (they feed S3 and S7, not S2)
 
 **Decisions this rests on (from the brief):**
 - **Scope:** only Dr. Alfredo Rentería and Dra. Fernanda Solís and their services (KB-04); no prices.
@@ -144,7 +144,7 @@ Every WhatsApp link carries a prefilled message with the page tag, e.g. "Hola, v
 | Adults with an eye problem | `/oftalmologia/` | Same | Same |
 | Foreign residents | `/en/` | "Message us on WhatsApp" (prefilled in English) | Same; Sofía handles English conversations |
 | Patients who know the doctors from Tepic | `/doctores/*` | WhatsApp for La Peñita; the Puerta de Hierro line for Tepic only if gate 3 allows | Same / +52 311 980 1034 |
-| Ready to call | Any | Call button only if 322 308 0404 takes calls (open) | Phone |
+| Ready to call | Any | "Llamar" button next to WhatsApp (322 308 0404 takes calls, confirmed 2026-10-23) | Phone 322 308 0404 |
 | Needs directions | `/contacto/` | "Cómo llegar": Google Maps link to UMER's GBP, not raw coordinates | Maps |
 
 - **First phone screen on every template:** who (UMER and the two doctors), what (two specialties), where (La Peñita), next step (WhatsApp). `taste.md` principle 8.
@@ -175,20 +175,20 @@ Every WhatsApp link carries a prefilled message with the page tag, e.g. "Hola, v
 ## Technical (T1)
 - **Rendering and URLs:** Astro static, so every page's text is in the server HTML. `trailingSlash: 'always'`, directory build format, absolute canonicals on `https://umermedical.com/`. `lang="es-MX"` (`en` on `/en/`).
 - **Titles and headings:** a unique title and meta description per page, from the `pages` data, and one H1. Title pattern: "{Página} en La Peñita | UMER", kept to 60 characters where possible.
-- **Crawling:** `sitemap.xml` at build, excluding the 404. `robots.txt` allows Googlebot, Bingbot, OAI-SearchBot, Claude-SearchBot and PerplexityBot. Training crawlers (GPTBot, ClaudeBot, Google-Extended): **proposed Allowed**, recorded on the Site once Francisco confirms. Real 404 status (`not_found_handling: "404-page"`).
+- **Crawling:** `sitemap.xml` at build, excluding the 404. `robots.txt` allows Googlebot, Bingbot, OAI-SearchBot, Claude-SearchBot and PerplexityBot. Training crawlers (GPTBot, ClaudeBot, Google-Extended): **Allowed** (Francisco, 2026-10-23; on the Site record). Real 404 status (`not_found_handling: "404-page"`).
 - **Analytics:** GA4, Search Console (property verified 2026-10-23), Bing Webmaster Tools, and IndexNow on deploy.
 - **Images and motion:** images through Astro `<Picture>`. The LCP element is a real photo, never animated. Calm motion budget: ≤ 15 KB of motion JS per page.
 
 ## Open for sign-off
 | # | Item | Who | Default if no answer |
 |---|---|---|---|
-| 1 | Ten service and hub pages (6 gynecology, 4 ophthalmology): right number? | Francisco | As proposed |
-| 2 | Training crawlers allowed? | Francisco | Allowed |
-| 3 | Does 322 308 0404 take calls? | Francisco | WhatsApp only, no call button |
+| 1 | ~~Ten service and hub pages: right number?~~ **Closed:** as proposed, at the department's judgment (Francisco, 2026-10-23) | — | — |
+| 2 | ~~Training crawlers allowed?~~ **Closed:** allowed | — | — |
+| 3 | ~~Does 322 308 0404 take calls?~~ **Closed:** yes, so the call button stays | — | — |
 | 4 | Tepic (gate 3): show "también consulta en Hospital Puerta de Hierro, Tepic" and that line's booking number? | Doctors | The fact line only, no number |
 | 5 | Inyección oftalmológica: what it treats and the right patient-facing name | Dra. Solís | Page held until answered |
 | 6 | What each package includes | Doctors | Packages not mentioned |
-| 7 | Cédulas and institutions for both doctors | Doctors | Clinician pages and doctor blocks don't launch (blocks S7, not S2) |
+| 7 | Cédulas and institutions for both doctors (Francisco is asking them) | Doctors | Clinician pages and doctor blocks don't launch (blocks S7, not S2) |
 | 8 | Switch UMER's main GBP phone to 322 308 0404 | Francisco | Decided in S6 |
 
 **Note for delivery:** Sofía's negative list says UMER has no "tomografía". The site will name OCT as "tomografía de coherencia óptica", an eye study UMER does offer. Sofía's KB should carry the same distinction, so she doesn't deny OCT to a patient who read the site.

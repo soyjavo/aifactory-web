@@ -215,18 +215,17 @@ Francisco, 2026-10-23: build the page structure so the next clinic can reuse it.
 ## Open questions
 | # | Question | Who answers | Blocks |
 |---|---|---|---|
-| 1 | Does 322 308 0404 also take phone calls, or WhatsApp only? Decides whether the site shows a call button | Francisco | S1 conversion paths |
-| 2 | UMER's main Google profile lists 322 158 2021 (human line). Switch it to 322 308 0404 so name, address and phone match the site? | Francisco | S6 |
-| 3 | GBP manager access? (Search Console done 2026-10-23; data pending) | Francisco | Baseline |
-| 4 | WhatsApp conversations started per month, Jul–Oct, from GHL (both numbers) | Francisco | Baseline |
-| 5 | Agree the one-thing sentence | Francisco + doctors | S2 |
-| 6 | Existing doctor photos: written OK from each doctor and the photographer's permission. Puerta de Hierro logo on Dr. Rentería's coat: retouch out, or another photo? | Doctors | S2 |
-| 7 | Logo in a vector file (AI, SVG or PDF) | Doctors | S2 |
-| 8 | Domain and DNS are in another of Francisco's Cloudflare accounts. Move them to a Cloudflare account UMER owns (opened with a clinic email), with Francisco as administrator, about a week before launch? Also add a UMER Google account as owner in Search Console | Francisco + doctors | S7 |
-| 9 | Booking channel and first-visit flag recorded by the sync; a demo Sofía and number | Delivery | Showcase, before launch |
-| 10 | Showcase consent, footer-credit brand, local-competitor policy | HQ | Showcase |
-| 11 | Redesign terms and retainer | HQ | S4 |
+| 1 | UMER's main Google profile lists 322 158 2021 (human line). Switch it to 322 308 0404 so name, address and phone match the site? | Francisco | S6 |
+| 2 | GBP manager access? (Search Console done 2026-10-23; data pending) | Francisco | Baseline |
+| 3 | WhatsApp conversations started per month, Jul–Oct, from GHL (both numbers) | Francisco | Baseline |
+| 4 | Agree the one-thing sentence | Francisco + doctors | S2 |
+| 5 | Existing doctor photos: written OK from each doctor and the photographer's permission. Puerta de Hierro logo on Dr. Rentería's coat: retouch out, or another photo? | Doctors | S2 |
+| 6 | Logo in a vector file (AI, SVG or PDF) | Doctors | S2 |
+| 7 | Domain and DNS are in another of Francisco's Cloudflare accounts. Move them to a Cloudflare account UMER owns (opened with a clinic email), with Francisco as administrator, about a week before launch? Also add a UMER Google account as owner in Search Console | Francisco + doctors | S7 |
+| 8 | Booking channel and first-visit flag recorded by the sync; a demo Sofía and number | Delivery | Showcase, before launch |
+| 9 | Showcase consent, footer-credit brand, local-competitor policy | HQ | Showcase |
+| 10 | Redesign terms and retainer | HQ | S4 |
 
 **Closed 2026-10-23** (the doctors, via Francisco): the site shows only the two owners; no relation to Clínica Rentería; references left to us; no prices on the site; photo session deferred, existing photos used meanwhile; the current hero photo is being replaced. Client contact is now the doctors directly; Fany has left.
 
-**Closed 2026-10-23** (Francisco): Spanish site plus one English page; WhatsApp CTA to 322 308 0404, human line not published; hotfix of the current site approved; S1 starts now. The one-thing sentence (question 5) is needed before S2, not S1.
+**Closed 2026-10-23** (Francisco): Spanish site plus one English page; WhatsApp CTA to 322 308 0404, human line not published; hotfix of the current site approved; S1 starts now. Later the same day: 322 308 0404 takes calls too; training crawlers allowed; S1 approved. The one-thing sentence (question 4) is needed before S2, not S1.
