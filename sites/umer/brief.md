@@ -52,7 +52,7 @@ UMER La Peñita only: the Supabase project also holds Hospital Puerta de Hierro 
 | WhatsApp conversations per month | **Pending: Francisco pulls from GHL** | Not in Supabase (`conversation_logs` is empty) and no GHL connector here. Needed: conversations started per month, Jul–Oct, on 322 158 2021 and 311 296 0297 |
 | Site-attributed WhatsApp and calls | **0 by construction** | The live site has no WhatsApp link and no analytics. Measurement starts the day a tagged link ships |
 | Site traffic | **Not available** | No GA4. Lovable's own analytics exist but need the Lovable login, which the built-in browser doesn't have |
-| Search Console, last 3 months | **Pending: Google sign-in** | The domain has a `google-site-verification` TXT record, but its email runs on Google Workspace, so the record may be Workspace's rather than Search Console's |
+| Search Console, last 3 months | **Pending: Google is processing data** | Domain property `sc-domain:umermedical.com` added and verified 2026-10-23; Francisco is the verified owner, through the `google-site-verification` TXT record already in DNS. Data expected within about a day; pull it then. That TXT record must stay in DNS, or ownership is lost |
 | GBP | UMER 5.0 ★, 11 reviews. Practitioner profiles: 0 reviews | Google Maps, 2026-10-22. Insights (calls, directions, clicks) need manager access |
 
 **Reading:** the totals are healthy, about 400 bookings a month. But the numbers a website moves (new inquiries, first visits, channel) are exactly the ones not recorded. Unless the measurement is fixed before launch, the case study rests on totals the season moves anyway.
@@ -147,7 +147,7 @@ Local search is thin: no competitor in town has a strong website. Visibility is 
 
 **Operational:**
 - Stack: moves to the default (Astro → Cloudflare) in this run; no exception needed. The site needs its own Cloudflare account (client's, with us invited, or the agency program) — never the company account (`stack.md`).
-- DNS is already on Cloudflare (nameservers `keanu` / `rachel`), in an account not yet identified. If it's the company account, the zone moves to the client's account or the agency program before launch. The A record points at Lovable. The domain's email runs on Google Workspace (MX + SPF): the cutover must not touch those records.
+- DNS is already on Cloudflare (nameservers `keanu` / `rachel`), in an account under an email other than Francisco's; whose is not yet known. If it's the company account, the zone moves to the client's account or the agency program before launch. The A record points at Lovable. The domain's email runs on Google Workspace (MX + SPF): the cutover must not touch those records.
 - Dra. Solís has her own site (`dra-fernanda-solis` run). Her clinician page here and her own site must link to each other without competing for the same queries — settle in S1 for both.
 - Content should read from the KB, so a change to hours or services is made once.
 
@@ -218,14 +218,14 @@ Francisco, 2026-10-23: build the page structure so the next clinic can reuse it.
 | 2 | What is UMER's relationship to Clínica Rentería? | Client | S1 |
 | 3 | Do we target English-speaking foreign residents? | Francisco (HQ) + client | S1 |
 | 4 | Which WhatsApp number is the site CTA: human line 322 158 2021 or the WABA 311 296 0297 where Sofía runs? And what is 322 308 0404 on the practitioner profiles? | Francisco | S1 conversion paths |
-| 5 | Search Console: sign in to Google in the built-in browser, or confirm no property exists. GBP manager access? | Francisco | Baseline |
+| 5 | GBP manager access? (Search Console done 2026-10-23; data pending) | Francisco | Baseline |
 | 6 | WhatsApp conversations started per month, Jul–Oct, from GHL (both numbers) | Francisco | Baseline |
 | 7 | Agree the one-thing sentence | Francisco + client | S2 |
 | 8 | Which sites do the doctors like, and why? | Client | S2 |
 | 9 | Photo session: photographer, date (Tuesday or Saturday morning), cost | Francisco + client | S2 |
 | 10 | Does a release exist for the Solís + Rentería hero photo? Logo vector? | Client | S2 |
 | 11 | Show prices on the site? | Client | S3 |
-| 12 | Which Cloudflare account holds the DNS zone? Can the client open their own? | Francisco / client | S4 |
+| 12 | The DNS zone sits in a Cloudflare account under another email (Francisco, 2026-10-23). Whose is it? If it's the client's, they invite Francisco as a member; if not, the zone moves to an account the client owns | Francisco / client | S7 |
 | 13 | Booking channel and first-visit flag recorded by the sync; a demo Sofía and number | Delivery | Showcase, before launch |
 | 14 | Showcase consent, footer-credit brand, local-competitor policy | HQ | Showcase |
 | 15 | Redesign terms and retainer | HQ | S4 |
