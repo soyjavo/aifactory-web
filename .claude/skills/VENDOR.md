@@ -11,3 +11,5 @@ Review each one before vendoring. Copy it into `.claude/skills/<name>/` and reco
 | hyperframes | heygen-com/hyperframes (Apache-2.0) | Programmatic video in storyboards (`capabilities.md`) | Install when a storyboard uses it | |
 | taste-skill | Leonxlnx/taste-skill | — | Not vendored; rules folded into standards/taste.md | |
 | ui-ux-pro-max | nextlevelbuilder/ui-ux-pro-max-skill | UX guidelines and landing patterns as reference | Reference only | |
+| higgsfield generate, soul, product-photoshoot | higgsfield-ai/skills (with `@higgsfield/cli`) | Video and stills from storyboards | To review in the AIFS pilot; only `generate` expected | |
+| 21st-ui-explore, 21st-ui-build, 21st-ui-review | 21st-dev/claude-code-plugin (or `@21st-dev/cli`) | Find and install UI components | To review; components follow `capabilities.md` | |

@@ -8,3 +8,7 @@ S2 Design · follows standards/imagery.md
 ## Provenance log
 | File | Source | Model / tool | Prompt or edit | Date | Release / consent ref | Label shown |
 |---|---|---|---|---|---|---|
+
+## Third-party components
+| Component | Source URL | Author | License | Restyled / converted to Astro? |
+|---|---|---|---|---|

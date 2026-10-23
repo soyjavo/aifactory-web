@@ -71,6 +71,7 @@ Allowed only when `direction.md` names the exception and the reason.
 | Emil Kowalski skills (web subset) | Motion craft and review. |
 | Taste skill | Not installed. Its rules are folded into this standard. |
 | ui-ux-pro-max | Reference only: its UX guidelines and landing-page patterns. Never its industry style or palette picks. |
+| 21st.dev | Parts bin for interactive patterns after direction is set; restyled to tokens. Never the design source (`capabilities.md`). |
 
 ## Brand notes
 
@@ -83,3 +84,4 @@ Allowed only when `direction.md` names the exception and the reason.
 
 - 2026-10-14: v1.
 - 2026-10-22: Concepts, storyboard and production steps added to the S2 method.
+- 2026-10-22: 21st.dev added to tools.

@@ -25,7 +25,7 @@ Before any concept, S0 records on the brief and on the Site record:
 | Chained clips | One continuous camera move across sections (first/last-frame control) | More takes; careful storyboard | Adds up per clip | No | Yes |
 | HyperFrames | Exact on-brand animation as video: logo, UI demo, "how it works", data | Free; Claude writes it in HTML | Small | Yes | Yes |
 | Interactive tools | Service finders, cost estimators, quizzes | Hours | Small | Yes | Yes |
-| 3D / WebGL | Interactive objects | High | Heavy | No | With a reason and a performance check |
+| 3D / WebGL / shader backgrounds | Interactive objects, live backgrounds | High | Heavy | No | With a reason and a performance check |
 
 ## Current tool picks
 
@@ -35,10 +35,27 @@ Recheck every quarter.
 |---|---|---|
 | Stills | GPT Image 2.5, Nano Banana 2.1 | fal MCP |
 | Retouch | See `imagery.md` | fal MCP |
-| Video | Seedance 2.0 / 2.5 for hero quality; Kling, Wan or MiniMax as alternates | fal or Higgsfield MCP. Confirm which offers Seedance 2.x, and at what price, in the first pilot run. |
+| Video | Seedance 2.0 for hero quality; Kling 3.0, Wan or MiniMax as alternates; first/last-frame interpolation for chained clips | Higgsfield: CLI plus its skills in Claude Code (Higgsfield recommends the CLI over its MCP for coding agents; the MCP is for Claude chat). fal or the model's own API per call when Higgsfield doesn't carry a model or costs more. |
+| UI components | 21st.dev: React + Tailwind components in shadcn format, installable from Claude Code | Its Claude Code plugin or CLI. Rules below. |
 | Programmatic video | HyperFrames | Its Claude Code plugin |
 | Compression | FFmpeg: H.264 MP4 plus WebM, AVIF/JPG poster, optional frame sequence | Shell |
 | Scroll binding | CSS scroll-driven animations where supported; Motion `scroll()`; GSAP only with a written reason | — |
+
+## Higgsfield
+
+- One account reaches Seedance 2.0, Kling 3.0, Veo 3.1, Sora 2, Wan, MiniMax, Nano Banana Pro and others, billed in credits.
+- Paid plan only: the Free plan has no Seedance and no commercial use. Check the output-rights terms before the first client clip.
+- Credits don't roll over, so subscribe month to month in production months only, the same way as Lovable.
+- Rough cost: about 23 credits per 5 s Seedance 2.0 clip at 720p and 45 at 1080p (Aug 2026), with 4–5 takes per keeper. Per clip this runs higher than calling an API directly; it buys one account, one login and agent skills. Compare after the pilot.
+- The CLI session is the account: Claude Code spends real credits. Set the clip count and budget in `storyboard.md` before generating.
+
+## 21st.dev
+
+- A parts bin for interactive patterns once `direction.md` is set (pricing toggles, marquees, tabs, booking steps). Never the design source: browsing it first leads straight to the banned defaults.
+- Restyle every component to `tokens.json`. If it needs no state, convert it to an Astro component so it ships no JavaScript.
+- Its JavaScript counts against the motion budget. Shader backgrounds follow the 3D / WebGL row.
+- Licenses are set per component by each author, and 21st's terms grant no blanket commercial license. Check each one and log it in `assets.md` before it ships in a client site.
+- Plan: Free (2 installs a day) to start; Builder ($72 a year) once it's used weekly. The AI generation tier isn't needed: Claude Code writes components.
 
 ## Hard limits
 
@@ -51,3 +68,4 @@ Recheck every quarter.
 ## Changelog
 
 - 2026-10-22: v1.
+- 2026-10-22: Higgsfield (video) and 21st.dev (UI components) added, with rules.
