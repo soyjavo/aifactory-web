@@ -144,7 +144,7 @@ Same Account, parallel run. These rules hold for both sites; the UMER brief shou
 
 **Operational:**
 - Stack moves to the default in this run: Astro → Cloudflare, on the client's own Cloudflare account or the agency program, never the company account. Off Netlify. The DNS zone sits in the same Cloudflare account as umermedical.com's: identify it once for both; if it's the company account, both zones move together. Registrar unknown.
-- **Hotfix shipped 2026-10-23** (site repo `e1fc349`): `public/_redirects` SPA fallback (every route now 200), testimonials and review schema removed, La Peñita phone set to 322-308-0404, privacy-page cédulas corrected. Side effect: unknown URLs now return 200 with the in-app 404 page (soft 404) until the redesign ships a real 404. Still live and unbacked: the hero/about claims and the FAQ's 24-hour emergency claim.
+- **Hotfix shipped 2026-10-23** (site repo `e1fc349`): `public/_redirects` SPA fallback (every route now 200), testimonials and review schema removed, La Peñita phone set to 322-308-0404, privacy-page cédulas corrected. Side effect: unknown URLs now return 200 with the in-app 404 page (soft 404) until the redesign ships a real 404. Follow-up shipped the same night (`c5b0f61`): every emergency mention (FAQ, contact, cataract, terms) now says call 911 or go to Hospital Puerta de Hierro's 24 h ER; neither the consultorio nor UMER La Peñita handles emergencies (Francisco, 2026-10-23). Still live and unbacked: the hero/about claims (5000+, 15+ años, Presidenta).
 - Her form says "yes" to a blog (eye care, check-ups, tamiz visual). Beyond the bounded page copy, that's content production: S8 quota or the future content department.
 
 ## SEO tier
