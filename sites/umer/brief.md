@@ -1,16 +1,16 @@
 # Brief — umermedical.com
-S0 Discovery · Run: [umermedical.com: Redesign](https://app.notion.com/p/3fae2e0b1cc7819e9eb3c320130ec9a0) · Date: 2026-10-22 · Updated 2026-10-23 (showcase goal, baseline, approach, reusable structure) · Status: **draft — open items in §Open questions**
+S0 Discovery · Run: [umermedical.com: Redesign](https://app.notion.com/p/3fae2e0b1cc7819e9eb3c320130ec9a0) · Date: 2026-10-22 · Updated 2026-10-23 (showcase goal, baseline, approach, reusable structure; doctors' answers) · Status: **draft — open items in §Open questions**
 
 Sources: Notion Site/Run records; UMER Knowledge Base (KB-02 v1.0, KB-03 v2.1, KB-04 v1.1); site repo `soyjavo/umer-salud-nayarit-web` @ `bc68b24`; live site read 2026-10-22 (raw HTML + rendered DOM); Google Maps listings 2026-10-22; Doctoralia directory page for Rincón de Guayabitos; UMER Supabase project, aggregate counts only (2026-10-23); public DNS records for umermedical.com (2026-10-23). Facts marked **(confirm)** are unverified with the client.
 
 ## Business
 - **Who:** Unidad Médica de Especialidades Rentería (UMER). Private multi-specialty outpatient unit, more than 20 years operating (KB-02).
-- **Owners / lead clinicians:** Dr. Alfredo Rentería García — Ginecólogo Oncólogo y Obstetra. Dra. María Fernanda Solís Rendón — Cirujana Oftalmóloga (incl. pediatric). Both also consult at Hospital Puerta de Hierro, Tepic (consultorio 407). Other specialists rent consultorios C3–C6; roster unconfirmed since May 2026.
-- **What they sell (client-decided, not ours):** KB-04 v1.1 is the source of truth for the two owners' services: 36 gynecology + 9 ophthalmology services with prices and prep. No catalog exists for the other specialties.
+- **Owners / lead clinicians:** Dr. Alfredo Rentería García — Ginecólogo Oncólogo y Obstetra. Dra. María Fernanda Solís Rendón — Cirujana Oftalmóloga (incl. pediatric). Both also consult at Hospital Puerta de Hierro, Tepic (consultorio 407). Other specialists rent consultorios C3–C6. **The site shows only the two owners for now** (doctors, 2026-10-23), matching what Sofía and Jessica can confirm.
+- **What they sell (client-decided, not ours):** KB-04 v1.1 is the source of truth for the two owners' services: 36 gynecology + 9 ophthalmology services with prices and prep. **No prices on the site** (doctors, 2026-10-23): patients ask over WhatsApp.
 - **Market · language:** MX · es. A real English-speaking foreign-resident segment exists (see Audience) — language scope is an open decision.
 - **Locations served:** La Peñita de Jaltemba, Compostela, Nayarit — Gral. Lázaro Cárdenas 8-A, Centro, 63720. The only active UMER location. Not Tepic. A future UMER Tepic branch is planned but not operating.
 - **Hours:** Mon–Sat 8:00–21:00, Sun closed (KB-02; matches GBP). Each doctor works specific days.
-- **Who approves on the client side:** Fany is the only admin contact since Flavio left (Sep 2026). Final sign-off presumably Dr. Rentería / Dra. Solís **(confirm)**.
+- **Who approves on the client side:** the doctors directly, Dra. Solís and Dr. Rentería. Fany has left the team (Oct 2026), and there's no admin contact.
 - **Existing AIFS work on this account:** Sofía (GHL Conversation AI on WhatsApp), the doctor portal `umer-doctor-hub`, Supabase scheduling. Those belong to delivery; this site only wires to them.
 
 ## Goals
@@ -61,7 +61,7 @@ UMER La Peñita only: the Supabase project also holds Hospital Puerta de Hierro 
 | Segment | What they're trying to do | What worries them |
 |---|---|---|
 | Local women, La Peñita–Guayabitos–Lo de Marcos–Las Varas corridor | Prenatal control, pap/colposcopy, ultrasound, IUD, a gynecologist without driving to Tepic or Vallarta | Cost, privacy, whether the specialist is actually there that day |
-| Parents | Newborn eye screening (tamiz visual), pediatric eye exam, pediatrics | Whether the doctor sees children; what to bring; consent rules for minors |
+| Parents | Newborn eye screening (tamiz visual), pediatric eye exam | Whether the doctor sees children; what to bring; consent rules for minors |
 | Adults and older adults | Eye exam, prescription, OCT, eye injections | Being sent elsewhere for equipment; needing a companion after dilation |
 | Foreign residents and winter visitors (US/Canada) | A doctor who explains in English, clear price before the visit, insurance paperwork | Language; surprise charges — competitor reviews show this is the live fear in town |
 | Patients who know the doctors from Tepic | Book with Dr. Rentería or Dra. Solís | Which location and which number; KB-02 documents this confusion |
@@ -77,7 +77,7 @@ Evidence for the foreign segment: KB-04 has a "Consulta extranjero" tier (gyn an
 | Site / listing | What they do well | Gap we can own |
 |---|---|---|
 | Hospital Joya La Peñita (Hospitales Joya network; directory listing, no own site found) | Full hospital: urgencias, imaging, lab; English spoken; tourist-facing | Not owner-specialists; no subspecialty depth in gyn-oncology or ophthalmic surgery |
-| Clínica Rentería, Bahía de Acapulco Nte. 8 (GBP 4.0, 77 reviews, open 24 h) | 24 h, review volume, serves foreigners | Reviews complain about surprise charges. **Relationship to UMER unknown — must be clarified before we position against or with it.** |
+| Clínica Rentería, Bahía de Acapulco Nte. 8 (GBP 4.0, 77 reviews, open 24 h) | 24 h, review volume, serves foreigners | **No relation to UMER** (doctors, 2026-10-23). Same surname in the name, a block away, open 24 h, with reviews about surprise charges: a real confusion risk. UMER's naming and NAP stay distinct everywhere; consider an FAQ line for patients who mix them up (S1/S3) |
 | CIU Centro Integral de Ultrasonido, La Peñita (GBP 5.0, 7 reviews) | Dedicated ultrasound, report with photos/video | UMER's ultrasound is done by the gyn-oncologist and bundled in the consult |
 | Dra. Sandra Llerena Legaspi (Doctoralia; Sayulita, Punta Mita, Nuevo Vallarta; 681 opinions) | Review volume, online booking, published prices, English | Regional, not local to La Peñita |
 | Consultorio Vital, La Peñita (GBP 4.9, 9 reviews) | Known among expats as bilingual | General practice only |
@@ -101,7 +101,7 @@ Local search is thin: no competitor in town has a strong website. Visibility is 
 | Home testimonials | "María L.", "Carlos R.", "Ana M." | No source | Same |
 | FAQ | Phone (311) 123-4567; hours L–V 9–19, Sáb 9–14; 24 h cancellation rule; "servicios básicos de laboratorio"; "principales aseguradoras" | Number is a placeholder; real hours above; no cancellation penalty today; lab and insurers unconfirmed (KB-03, KB-06) | Wrong information |
 | `/agendar-cita` | Booking form shows "Solicitud enviada con éxito" | Submit only `console.log`s — every request is lost | Lost patients |
-| `/especialidades` | 17 specialties with Unsplash and generated images; Medicina Interna, Cirugía Bariátrica and Nutrición Clínica appear on no KB list; "Estética Vaginal" is claimed | Roster unconfirmed; KB tells Sofía *not* to affirm these | Unbacked claims; stock people as staff |
+| `/especialidades` | 17 specialties with Unsplash and generated images; Medicina Interna, Cirugía Bariátrica and Nutrición Clínica appear on no KB list; "Estética Vaginal" is claimed | KB tells Sofía *not* to affirm these; the new site shows only the two owners | Unbacked claims; stock people as staff |
 | Clinician info | No names, cédulas or photos per doctor | LGS Art. 83 requires cédula + institution on health promotion (`imagery.md`) | Compliance gap |
 | Privacy notice | "Última actualización: Enero 2024" | A new LFPDPPP was published in 2025 | Route to counsel |
 
@@ -117,21 +117,21 @@ Local search is thin: no competitor in town has a strong website. Visibility is 
 |---|---|---|
 | Logo | Raster PNG 1280×466 (blue + green wave, full name) from the current site | No vector found in Drive. Need SVG/AI. |
 | Brand kit | None found | Palette can be derived from the logo in S2 |
-| Photos of clinicians | One real photo of Dra. Solís + Dr. Rentería (background removed) in the hero | Release status unknown; no individual portraits. A real session is planned (see Approach). Originals and signed releases go to [`09 - Web umermedical.com / 02 - Sesión de fotos doctores`](https://drive.google.com/drive/folders/1cof_YEEnis5HWGgZlkHipXvgtGyvBTZc) |
+| Photos of clinicians | The current hero photo is being replaced (doctors, 2026-10-23). The doctors have other real photos; Francisco shared one on 2026-10-23: both owners in white coats against a wood-slat wall, sharp and well lit | The session is deferred, so existing photos carry the site for now. On the shared photo: Dr. Rentería's coat carries the Hospitales Puerta de Hierro logo, a third-party brand on UMER's site. Retouch it out (`imagery.md` allows this; identity is untouched) or pick another photo. It's a pair shot, so clinician pages need crops or individual photos. Every photo needs a written OK from each doctor and the photographer's permission. Originals go to [`09 - Web umermedical.com / 02`](https://drive.google.com/drive/folders/1cof_YEEnis5HWGgZlkHipXvgtGyvBTZc) |
 | Photos of premises | Francisco has existing clinic photos and is placing them in [`09 - Web umermedical.com / 01 - Fotos existentes de la clínica`](https://drive.google.com/drive/folders/1vvCqmtdiK1SUsfF6McuJ1M42bQWZs37C) | S2 inventories them in `assets.md` against `imagery.md`: usable as is, retouch only, or unusable. Anyone identifiable in frame needs a release (staff) or written consent (patients) |
-| Specialty images | Unsplash stock + generated | None usable as UMER-specific |
+| Specialty images | Unsplash stock + generated | All replaced. New ones are AI-generated objects and settings (Francisco, 2026-10-23), produced in S2 after the concept is picked. No people. Only equipment and services UMER really has (ultrasound, eye exam equipment, OCT); never X-ray, mammography, CT or MRI, which are on KB-03's list of what UMER doesn't have |
 | Credentials | Cédulas, training, experience "pendiente" in KB-03 | Blocks clinician pages |
 | Content source | Notion KB-02…KB-08, written for Sofía | Reuse as the site's fact source — one place to update |
 | Drive | "UMER Clinica" shared drive (legal, meetings, operations, specialists, config) | Web folder created 2026-10-23: [`09 - Web umermedical.com`](https://drive.google.com/drive/folders/1i5p3DxiWdlz2b4Sj8rXbDRmXQcifm3Bl). No brand folder yet |
 | Social | Facebook @umerenteria; Instagram unconfirmed | — |
 
 ## Constraints and gates
-**Gates — decisions this department doesn't own (S1 can't map services until 1 and 2 close):**
-1. **Specialty roster (client, via Fany):** which of the 16 listed specialties and specialists are active and may be published. One page per service requires real presence.
-2. **UMER ↔ Clínica Rentería (client):** same owners? same building? shared urgencias? Decides naming, entity disambiguation, schema and whether "urgencias" appears anywhere.
+**Gates — decisions this department doesn't own (1, 2 and 5 closed 2026-10-23; S1 still needs open questions 1 and 2):**
+1. **Specialty roster — closed:** the site shows only Dra. Solís and Dr. Rentería and their services. Other specialists stay off until the doctors say otherwise.
+2. **UMER ↔ Clínica Rentería — closed:** no relation. It becomes an entity-disambiguation task for S1 and S5: distinct naming and NAP, schema `sameAs` pointing only to UMER's own profiles, no "urgencias" claim.
 3. **Tepic (client):** how to present Puerta de Hierro consultorio 407 (KB-03 v2.1 calls it "UMER Puerta de Hierro") and the future UMER Tepic. No Tepic location page until UMER really operates there.
 4. **English for foreign patients (HQ + client):** whether the site targets them. If yes, a separate English section with its own content, not a translation. Nationality-based pricing ("Consulta extranjero") must not be published before counsel reviews it.
-5. **Published prices (client):** KB-04 has them; whether the site shows them is the client's call.
+5. **Published prices — closed:** no prices on the site. Service pages send price questions to WhatsApp. This also keeps the nationality-based "Consulta extranjero" price off the site.
 6. **Commercial (HQ):** Site record shows no retainer. Redesign terms and the S8 retainer need to be settled before S4.
 7. **Showcase (HQ):** client consent to be a named reference and to share aggregate numbers; which AIFS brand is credited (blocked by the open InteliMX / AIFactory Health gate). If the next clinic competes locally with UMER, HQ decides whether that conflicts with using UMER as the reference.
 
@@ -167,7 +167,7 @@ Francisco, 2026-10-23.
 | Item | Budget | What it buys (`capabilities.md`) | Watch |
 |---|---|---|---|
 | AI generation | ~$70 | Stills and retouching cost cents each, so they barely touch it. A hero clip at 720p runs ~$0.75–1.50 per take with 4–5 takes per keeper: called per take through fal, one signature clip is roughly $3–8, which leaves room for retakes or a second variant | Higgsfield needs a paid monthly plan. Before picking it over per-call fal, check that its plan price fits inside $70 |
-| Photo session | One real session for the doctors | Portraits of Dr. Rentería and Dra. Solís, together and at work (ultrasound, eye exam), plus the premises in the same light. Releases signed before anything is published | Photographer and cost not set. Both owners are in La Peñita on Tuesday and Saturday mornings (KB-03), so book one of those. Ask the photographer for 10–20 s of real footage of the premises: a zero-cost candidate for the signature moment |
+| Photo session | One real session for the doctors | Portraits of Dr. Rentería and Dra. Solís, together and at work (ultrasound, eye exam), plus the premises in the same light. Releases signed before anything is published | **Deferred** (doctors, 2026-10-23): may not happen soon, so existing photos carry the site meanwhile. When it happens: a Tuesday or Saturday morning, when both owners are in La Peñita (KB-03), and 10–20 s of real premises footage as a zero-cost signature-moment candidate |
 | Hours | 10 | Allocation below | |
 
 - **Hours** are read as Francisco's hands-on time, with agents doing the production work:
@@ -186,11 +186,11 @@ Francisco, 2026-10-23.
 
 - **Real assets available for motion:**
   - Existing clinic photos (Francisco → Drive; inventoried in S2).
-  - The doctors' photo session, plus any premises footage from it.
-  - The current hero photo of both owners (release unknown).
+  - Existing photos of the doctors (one shared 2026-10-23; more to come).
+  - AI-generated specialty images: objects and settings only.
   - The logo (raster only).
-  - No footage exists today.
-- **Sites the client points to:** not asked yet (see Open questions).
+  - No footage exists today. The photo session is deferred.
+- **Sites the client points to:** none; the doctors leave references to us (2026-10-23). S2 picks 3–4 per `taste.md`, at least one from outside health.
 
 ## Reusable page structure
 Francisco, 2026-10-23: build the page structure so the next clinic can reuse it.
@@ -206,7 +206,7 @@ Francisco, 2026-10-23: build the page structure so the next clinic can reuse it.
 
 - **Reuse the skeleton, never the skin.** `taste.md` principle 1 ("no section should fit a competitor's site unchanged") applies to every clinic, especially if the next one is in UMER's corridor.
 - **Two shapes for S1.** S1 designs the model against two shapes so it doesn't bake in UMER's:
-  - UMER: multi-specialty, two owner-specialists, rented consultorios.
+  - UMER: two owner-specialists in two specialties, with room to add the clinic's other specialists later.
   - A solo practice like drafernandasolis.com, already in the redesign program.
 - **Where it lives:** inside UMER's repo, with clinic data kept apart from components. Extract a starter repo when a second clinic actually starts, not before, and add it to `stack.md` then.
 - **Cost:** fits in the 10 h only at this level. A multi-clinic CMS, a site generator or a sales-demo mode is a separate project, not this run.
@@ -214,18 +214,16 @@ Francisco, 2026-10-23: build the page structure so the next clinic can reuse it.
 ## Open questions
 | # | Question | Who answers | Blocks |
 |---|---|---|---|
-| 1 | Which specialties/specialists are active and publishable? | Client (Fany) | S1 |
-| 2 | What is UMER's relationship to Clínica Rentería? | Client | S1 |
-| 3 | Do we target English-speaking foreign residents? | Francisco (HQ) + client | S1 |
-| 4 | Which WhatsApp number is the site CTA: human line 322 158 2021 or the WABA 311 296 0297 where Sofía runs? And what is 322 308 0404 on the practitioner profiles? | Francisco | S1 conversion paths |
-| 5 | GBP manager access? (Search Console done 2026-10-23; data pending) | Francisco | Baseline |
-| 6 | WhatsApp conversations started per month, Jul–Oct, from GHL (both numbers) | Francisco | Baseline |
-| 7 | Agree the one-thing sentence | Francisco + client | S2 |
-| 8 | Which sites do the doctors like, and why? | Client | S2 |
-| 9 | Photo session: photographer, date (Tuesday or Saturday morning), cost | Francisco + client | S2 |
-| 10 | Does a release exist for the Solís + Rentería hero photo? Logo vector? | Client | S2 |
-| 11 | Show prices on the site? | Client | S3 |
-| 12 | Domain and DNS are in another of Francisco's Cloudflare accounts. Move them to a Cloudflare account UMER owns (opened with a clinic email), with Francisco as administrator, about a week before launch? Also add a UMER Google account as owner in Search Console | Francisco + client | S7 |
-| 13 | Booking channel and first-visit flag recorded by the sync; a demo Sofía and number | Delivery | Showcase, before launch |
-| 14 | Showcase consent, footer-credit brand, local-competitor policy | HQ | Showcase |
-| 15 | Redesign terms and retainer | HQ | S4 |
+| 1 | Do we target English-speaking foreign residents? | Francisco (HQ) | S1 |
+| 2 | Which WhatsApp number is the site CTA: human line 322 158 2021 or the WABA 311 296 0297 where Sofía runs? And what is 322 308 0404 on the practitioner profiles? | Francisco | S1 conversion paths |
+| 3 | GBP manager access? (Search Console done 2026-10-23; data pending) | Francisco | Baseline |
+| 4 | WhatsApp conversations started per month, Jul–Oct, from GHL (both numbers) | Francisco | Baseline |
+| 5 | Agree the one-thing sentence | Francisco + doctors | S2 |
+| 6 | Existing doctor photos: written OK from each doctor and the photographer's permission. Puerta de Hierro logo on Dr. Rentería's coat: retouch out, or another photo? | Doctors | S2 |
+| 7 | Logo in a vector file (AI, SVG or PDF) | Doctors | S2 |
+| 8 | Domain and DNS are in another of Francisco's Cloudflare accounts. Move them to a Cloudflare account UMER owns (opened with a clinic email), with Francisco as administrator, about a week before launch? Also add a UMER Google account as owner in Search Console | Francisco + doctors | S7 |
+| 9 | Booking channel and first-visit flag recorded by the sync; a demo Sofía and number | Delivery | Showcase, before launch |
+| 10 | Showcase consent, footer-credit brand, local-competitor policy | HQ | Showcase |
+| 11 | Redesign terms and retainer | HQ | S4 |
+
+**Closed 2026-10-23** (the doctors, via Francisco): the site shows only the two owners; no relation to Clínica Rentería; references left to us; no prices on the site; photo session deferred, existing photos used meanwhile; the current hero photo is being replaced. Client contact is now the doctors directly; Fany has left.
