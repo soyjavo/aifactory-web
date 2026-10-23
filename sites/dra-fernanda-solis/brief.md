@@ -144,7 +144,7 @@ Same Account, parallel run. These rules hold for both sites; the UMER brief shou
 
 **Operational:**
 - Stack moves to the default in this run: Astro → Cloudflare, on the client's own Cloudflare account or the agency program, never the company account. Off Netlify. The DNS zone sits in the same Cloudflare account as umermedical.com's: identify it once for both; if it's the company account, both zones move together. Registrar unknown.
-- **Proposed hotfix before the redesign (needs Francisco's OK):** add `public/_redirects` with `/* /index.html 200`, remove the testimonials and review schema, fix the La Peñita phone and the privacy-page cédulas. About 30 minutes. It brings ten pages back for patients and Google weeks before the new site ships.
+- **Hotfix shipped 2026-10-23** (site repo `e1fc349`): `public/_redirects` SPA fallback (every route now 200), testimonials and review schema removed, La Peñita phone set to 322-308-0404, privacy-page cédulas corrected. Side effect: unknown URLs now return 200 with the in-app 404 page (soft 404) until the redesign ships a real 404. Still live and unbacked: the hero/about claims and the FAQ's 24-hour emergency claim.
 - Her form says "yes" to a blog (eye care, check-ups, tamiz visual). Beyond the bounded page copy, that's content production: S8 quota or the future content department.
 
 ## SEO tier
@@ -183,7 +183,6 @@ Same Account, parallel run. These rules hold for both sites; the UMER brief shou
 | 8 | Which Netlify account hosts the site, and which Cloudflare account holds the zone (same as UMER's)? Can she or UMER open their own? | Francisco / client | S4 |
 | 9 | Who manages both GBPs and the Doctoralia profile? | Francisco / client | S6 |
 | 10 | Which Facebook page is hers (`oftalmologiatepic` vs `drafernandasolis`)? | Client | S1 `sameAs` |
-| 11 | OK to ship the hotfix now? | Francisco | — |
-| 12 | Which sites does she like, and why? | Client | S2 |
-| 13 | Showcase: her consent to be a named reference; which AIFS brand gets the footer credit (same HQ gate as UMER) | HQ | Showcase |
-| 14 | Redesign terms and retainer | HQ | S4 |
+| 11 | Which sites does she like, and why? | Client | S2 |
+| 12 | Showcase: her consent to be a named reference; which AIFS brand gets the footer credit (same HQ gate as UMER) | HQ | Showcase |
+| 13 | Redesign terms and retainer | HQ | S4 |
