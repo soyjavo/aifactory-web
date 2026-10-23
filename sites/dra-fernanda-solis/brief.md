@@ -1,7 +1,7 @@
 # Brief — drafernandasolis.com
-S0 Discovery · Run: [drafernandasolis.com: Redesign](https://app.notion.com/p/3fae2e0b1cc7811bbaf2c1154cee4e81) · Date: 2026-10-23 · Status: **draft — Search Console baseline pending; open items in §Open questions**
+S0 Discovery · Run: [drafernandasolis.com: Redesign](https://app.notion.com/p/3fae2e0b1cc7811bbaf2c1154cee4e81) · Date: 2026-10-23 · Status: **draft — open items in §Open questions**
 
-Sources: Notion Site/Run records; UMER KB-03 v2.1 (8 oct 2026); PH implementation page in Notion (phone per location); the doctor's own intake form "Dra Fernanda Solis - Formato para Medico.pdf" (Drive, Aug 2025); site repo `soyjavo/dra-fernada-solis-website` @ `51b5183` (2026-02-01); live site read 2026-10-23 (HTTP status + headers per URL, raw HTML, rendered DOM); Google Maps, both practitioner profiles (2026-10-23); Doctoralia "Oftalmólogos en Tepic" list; Top Doctors pediatric ophthalmology list; `sites/umer/brief.md`. Facts marked **(confirm)** are unverified with the client.
+Sources: Notion Site/Run records; UMER KB-03 v2.1 (8 oct 2026); PH implementation page in Notion (phone per location); the doctor's own intake form "Dra Fernanda Solis - Formato para Medico.pdf" (Drive, Aug 2025); site repo `soyjavo/dra-fernada-solis-website` @ `51b5183` (2026-02-01); live site read 2026-10-23 (HTTP status + headers per URL, raw HTML, rendered DOM); Google Maps, both practitioner profiles (2026-10-23); Search Console domain property (2026-10-23); public DNS (2026-10-23); Doctoralia "Oftalmólogos en Tepic" list; Top Doctors pediatric ophthalmology list; `sites/umer/brief.md`. Facts marked **(confirm)** are unverified with the client.
 
 ## Business
 - **Who:** Dra. María Fernanda Solís Rendón, Cirujana Oftalmóloga. Clinical and surgical ophthalmology, adults and children/adolescents (KB-03; her intake form). Co-owner of UMER with Dr. Rentería.
@@ -23,7 +23,7 @@ Sources: Notion Site/Run records; UMER KB-03 v2.1 (8 oct 2026); PH implementatio
 - **Secondary:** PH online booking (exists), call, directions from either GBP.
 - **How we'll know it worked:** WhatsApp click-throughs, calls and bookings per location per month (GA4 events); GSC clicks and impressions for her name, "oftalmólogo Tepic", "cirugía de catarata Tepic", "oftalmólogo para niños Tepic", "oftalmólogo La Peñita"; GBP actions on both profiles.
 - **Showcase measurement:** same rules as UMER's "Showcase for clinic sales" section, so the two case studies read alike: a tagged WhatsApp link per location, GA4 events on WhatsApp, call and booking clicks, measured the same way before and after launch. Patients first; nothing goes on the site only for the demo.
-- **Baseline:** GA4 is installed (`G-XF18KGEHHY`), event setup unknown. Search Console: **pending** — the property very likely exists (DNS verification record), but the browser pane isn't signed in to Google. Pull GSC (3 and 16 months: clicks, impressions, top queries, top pages, indexing report) and GA4 (3 months) as soon as access is available. Expect GSC to show only `/` indexed, given the 404s below.
+- **Baseline:** Search Console, last 3 months: 77 clicks, 2,493 impressions, all on `/` (detail under Current site). GA4 is installed (`G-XF18KGEHHY`), event setup unknown; no WhatsApp, call or booking events confirmed, so site-attributed inquiries start at zero by construction. GA4 traffic not pulled yet.
 
 ## Audience
 | Segment | What they're trying to do | What worries them |
@@ -36,7 +36,7 @@ Sources: Notion Site/Run records; UMER KB-03 v2.1 (8 oct 2026); PH implementatio
 
 ## The one thing
 - **Candidate (needs Francisco + doctor sign-off):** *"La misma cirujana oftalmóloga para toda la familia, niños incluidos, en el Hospital Puerta de Hierro de Tepic y en La Peñita."*
-- **Why this one:** none of the 20 ophthalmologists on Doctoralia's Tepic list mentions pediatric ophthalmology; Top Doctors' nearest pediatric ophthalmologists are in Guadalajara. She treats children and operates strabismus in children and adults (her form). The two locations are real and the competitors' are not on the coast.
+- **Why this one:** people already search for it: about 50 impressions in 3 months on pediatric eye queries in Tepic, with no page to land on (GSC). None of the 20 ophthalmologists on Doctoralia's Tepic list mentions pediatric ophthalmology; Top Doctors' nearest pediatric ophthalmologists are in Guadalajara. She treats children and operates strabismus in children and adults (her form). The two locations are real and the competitors' are not on the coast.
 - **Guardrail:** unless she holds a pediatric ophthalmology subspecialty certificate, copy says she *atiende niños* — never *oftalmóloga pediatra* **(confirm)**.
 - **Signature moment:** "ver con claridad" (blur to focus) is the visual form of this promise, not the promise itself.
 - Per `taste.md`, S0 isn't done until this sentence is agreed.
@@ -61,7 +61,7 @@ No competitor surfaced with a strong website. Visibility is decided on Doctorali
 
 | Where | Says / does | Reality (source) | Risk |
 |---|---|---|---|
-| **Every URL except `/`** | Netlify "Page not found", HTTP 404: `/servicios` and its 5 service pages, `/sobre-mi`, `/contacto`, `/agendar`, `/preguntas-frecuentes`, `/privacidad`, `/terminos-y-condiciones` | No SPA fallback (`_redirects`) in the repo. In-app navigation works; direct visits, shared links, refreshes and Googlebot get 404. 10 of the 11 sitemap URLs 404. | Service pages almost certainly not indexed. "Keep URLs that rank" probably means only `/` — GSC confirms. |
+| **Every URL except `/`** | Netlify "Page not found", HTTP 404: `/servicios` and its 5 service pages, `/sobre-mi`, `/contacto`, `/agendar`, `/preguntas-frecuentes`, `/privacidad`, `/terminos-y-condiciones` | No SPA fallback (`_redirects`) in the repo. In-app navigation works; direct visits, shared links, refreshes and Googlebot get 404. 10 of the 11 sitemap URLs 404. | GSC: only `/` is indexed. Nothing but the home page has ever ranked. |
 | **Home testimonials + review schema** | Six named patients (María González, Carlos Ramírez…) and `aggregateRating` 5.0 / 6 reviews in JSON-LD | Her form lists no authorized testimonials; the earlier redesign's `REDESIGN_SUMMARY.md` only says they were carried over from the previous version. No source anywhere | Fabricated testimonials in health advertising; self-serving review markup (`seo.md`, Google policy) |
 | Hero, about, footer | "5000+ pacientes", "más de 15 años", "Presidenta, Sociedad de Oftalmólogos de Nayarit 2020–2022", "Certificada" | Not in her own intake form or KB-03. Her form says: UdeG; certificación vigente "colegio mexicano de oftalmólogos"; member of SMO and Sociedad de Oftalmólogos de Nayarit | Unbacked claims. Board certification in Mexico is issued by the Consejo Mexicano de Oftalmología — get the certificate and quote its exact name. |
 | `/privacidad` | Cédulas 4945849 / 6641452 | Footer and her form: 11984010 / 13206835 | Wrong cédula on a legal page (LGS Art. 83) |
@@ -84,7 +84,16 @@ No competitor surfaced with a strong website. Visibility is decided on Doctorali
 | 322 308 0404 | La Peñita GBP; PH implementation page | Likely La Peñita's line **(confirm)** |
 | 322 158 2021 | UMER human line (KB-03) | UMER's clinic line |
 
-**Search Console (last 3 months):** pending access.
+**Search Console** (domain property, read 2026-10-23; data starts 2026-02-01):
+
+| Window | Clicks | Impressions | CTR | Avg. position |
+|---|---|---|---|---|
+| Last 3 months (Jul 21 – Oct 20) | 77 | 2,493 | 3.1% | 7.2 |
+| All data (Feb 1 – Oct 20) | 185 | 4,444 | 4.2% | 6.8 |
+
+- **Pages:** `/` is the only URL with impressions, and the only page indexed (1 indexed; 1 excluded as "page with redirect"). No sitemap has ever been submitted, so Google hasn't even recorded the 404s. **No URL other than `/` carries search equity.** The old paths still get 301s in S1 (cheap; catches stray links and shares), but nothing ranks to protect.
+- **Trend:** impressions rose (about 2,500 in the last 3 months vs about 1,950 in the 5.6 months before), clicks fell (77 vs 108). One page answering every query.
+- **Top queries (3 months, 104 total):** "fernanda solis" 394 impressions, 0 clicks, pos 6.2 — the name is shared with other people (several queries are Instagram handles), so the site must say *Dra.* and *oftalmóloga* wherever her name appears. "oftalmologo tepic" 65 impr., pos 10.3, the only generic query with a click. **Pediatric queries total about 50 impressions** ("oftalmólogo pediatra", "oftalmologo pediatra en tepic", "oftalmopediatria", "oftalmólogo pediátrico"…) at positions 1–12 with no page to land on. Smaller: "puerta de hierro oftalmología" (6), "tamiz oftalmológico", "estrabismo", "umer la peñita" (2).
 
 **GBP (2026-10-23):** two practitioner profiles, both named "Dra. Fernanda Solis Rendon - Cirujana Oftalmóloga", both linking to drafernandasolis.com, no reviews shown on either. Ownership and verification unknown.
 - Tepic: Av. de la Salud 221, Piso 4, Consultorio 407, 63175; +52 311 910 0090; Mon/Wed/Thu 10–17, Tue 10–14 (Tuesday clashes with her La Peñita schedule); 5 photos; "Located in" points to a Center for Innovation and Technology Transfer, not the hospital.
@@ -164,18 +173,17 @@ Same Account, parallel run. These rules hold for both sites; the UMER brief shou
 ## Open questions
 | # | Question | Who answers | Blocks |
 |---|---|---|---|
-| 1 | Search Console and GA4 access: sign the browser pane in to the Google account that owns the property | Francisco | Baseline |
-| 2 | One phone per location (table above); what are 311 910 0090, 311 170 2521 and 327 690 2540? | Francisco + client | S1 |
-| 3 | Her Tepic consulting hours; official street name of the hospital | Client | S1 |
-| 4 | Certificate (exact body and name), specialty institution, surgeries she performs and where, pediatric subspecialty | Client | S3 |
-| 5 | Final service list (form vs KB-04 vs site) | Client | S1 |
-| 6 | Agree the one-thing sentence | Francisco + client | S2 |
-| 7 | WhatsApp number per location and which agent answers | Francisco (delivery) | S1 conversion paths |
-| 8 | English: in or out (same answer as UMER) | Francisco (HQ) + client | S1 |
-| 9 | Which Netlify account hosts the site, and which Cloudflare account holds the zone (same as UMER's)? Can she or UMER open their own? | Francisco / client | S4 |
-| 10 | Who manages both GBPs and the Doctoralia profile? | Francisco / client | S6 |
-| 11 | Which Facebook page is hers (`oftalmologiatepic` vs `drafernandasolis`)? | Client | S1 `sameAs` |
-| 12 | OK to ship the hotfix now? | Francisco | — |
-| 13 | Which sites does she like, and why? | Client | S2 |
-| 14 | Showcase: her consent to be a named reference; which AIFS brand gets the footer credit (same HQ gate as UMER) | HQ | Showcase |
-| 15 | Redesign terms and retainer | HQ | S4 |
+| 1 | One phone per location (table above); what are 311 910 0090, 311 170 2521 and 327 690 2540? | Francisco + client | S1 |
+| 2 | Her Tepic consulting hours; official street name of the hospital | Client | S1 |
+| 3 | Certificate (exact body and name), specialty institution, surgeries she performs and where, pediatric subspecialty | Client | S3 |
+| 4 | Final service list (form vs KB-04 vs site) | Client | S1 |
+| 5 | Agree the one-thing sentence | Francisco + client | S2 |
+| 6 | WhatsApp number per location and which agent answers | Francisco (delivery) | S1 conversion paths |
+| 7 | English: in or out (same answer as UMER) | Francisco (HQ) + client | S1 |
+| 8 | Which Netlify account hosts the site, and which Cloudflare account holds the zone (same as UMER's)? Can she or UMER open their own? | Francisco / client | S4 |
+| 9 | Who manages both GBPs and the Doctoralia profile? | Francisco / client | S6 |
+| 10 | Which Facebook page is hers (`oftalmologiatepic` vs `drafernandasolis`)? | Client | S1 `sameAs` |
+| 11 | OK to ship the hotfix now? | Francisco | — |
+| 12 | Which sites does she like, and why? | Client | S2 |
+| 13 | Showcase: her consent to be a named reference; which AIFS brand gets the footer credit (same HQ gate as UMER) | HQ | Showcase |
+| 14 | Redesign terms and retainer | HQ | S4 |
