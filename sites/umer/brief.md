@@ -7,7 +7,8 @@ Sources: Notion Site/Run records; UMER Knowledge Base (KB-02 v1.0, KB-03 v2.1, K
 - **Who:** Unidad Médica de Especialidades Rentería (UMER). Private multi-specialty outpatient unit, more than 20 years operating (KB-02).
 - **Owners / lead clinicians:** Dr. Alfredo Rentería García — Ginecólogo Oncólogo y Obstetra. Dra. María Fernanda Solís Rendón — Cirujana Oftalmóloga (incl. pediatric). Both also consult at Hospital Puerta de Hierro, Tepic (consultorio 407). Other specialists rent consultorios C3–C6. **The site shows only the two owners for now** (doctors, 2026-10-23), matching what Sofía and Jessica can confirm.
 - **What they sell (client-decided, not ours):** KB-04 v1.1 is the source of truth for the two owners' services: 36 gynecology + 9 ophthalmology services with prices and prep. **No prices on the site** (doctors, 2026-10-23): patients ask over WhatsApp.
-- **Market · language:** MX · es. A real English-speaking foreign-resident segment exists (see Audience) — language scope is an open decision.
+- **Market · language:** MX · es, plus **one English page** for foreign residents (Francisco, 2026-10-23). It has its own content, not a translation, and no hreflang because no Spanish page is its alternate.
+- **Contact numbers (Francisco, 2026-10-23):** the site's WhatsApp CTA goes to **322 308 0404**, the main number of the two AI assistants (Sofía and Jessica). The human assistants' line is not published; the AI assistants hand it out. Every chat from the site therefore starts with an AI, so the AI disclosure next to the CTA is mandatory.
 - **Locations served:** La Peñita de Jaltemba, Compostela, Nayarit — Gral. Lázaro Cárdenas 8-A, Centro, 63720. The only active UMER location. Not Tepic. A future UMER Tepic branch is planned but not operating.
 - **Hours:** Mon–Sat 8:00–21:00, Sun closed (KB-02; matches GBP). Each doctor works specific days.
 - **Who approves on the client side:** the doctors directly, Dra. Solís and Dr. Rentería. Fany has left the team (Oct 2026), and there's no admin contact.
@@ -49,7 +50,7 @@ UMER La Peñita only: the Supabase project also holds Hospital Puerta de Hierro 
 | Metric | Baseline | Note |
 |---|---|---|
 | Bookings by channel (WhatsApp AI, reception, phone, web) | **Not measurable** | `source` = "receptionist" on 100% of rows; `is_follow_up` is never true. Delivery fix, see the showcase table |
-| WhatsApp conversations per month | **Pending: Francisco pulls from GHL** | Not in Supabase (`conversation_logs` is empty) and no GHL connector here. Needed: conversations started per month, Jul–Oct, on 322 158 2021 and 311 296 0297 |
+| WhatsApp conversations per month | **Pending: Francisco pulls from GHL** | Not in Supabase (`conversation_logs` is empty) and no GHL connector here. Needed: conversations started per month, Jul–Oct, on 322 308 0404 (main) and the human lines |
 | Site-attributed WhatsApp and calls | **0 by construction** | The live site has no WhatsApp link and no analytics. Measurement starts the day a tagged link ships |
 | Site traffic | **Not available** | No GA4. Lovable's own analytics exist but need the Lovable login, which the built-in browser doesn't have |
 | Search Console, last 3 months | **Pending: Google is processing data** | Domain property `sc-domain:umermedical.com` added and verified 2026-10-23; Francisco is the verified owner, through the `google-site-verification` TXT record already in DNS. Data expected within about a day; pull it then. That TXT record must stay in DNS, or ownership is lost |
@@ -126,11 +127,11 @@ Local search is thin: no competitor in town has a strong website. Visibility is 
 | Social | Facebook @umerenteria; Instagram unconfirmed | — |
 
 ## Constraints and gates
-**Gates — decisions this department doesn't own (1, 2 and 5 closed 2026-10-23; S1 still needs open questions 1 and 2):**
+**Gates — decisions this department doesn't own (1, 2, 4 and 5 closed 2026-10-23; S1 can proceed):**
 1. **Specialty roster — closed:** the site shows only Dra. Solís and Dr. Rentería and their services. Other specialists stay off until the doctors say otherwise.
 2. **UMER ↔ Clínica Rentería — closed:** no relation. It becomes an entity-disambiguation task for S1 and S5: distinct naming and NAP, schema `sameAs` pointing only to UMER's own profiles, no "urgencias" claim.
 3. **Tepic (client):** how to present Puerta de Hierro consultorio 407 (KB-03 v2.1 calls it "UMER Puerta de Hierro") and the future UMER Tepic. No Tepic location page until UMER really operates there.
-4. **English for foreign patients (HQ + client):** whether the site targets them. If yes, a separate English section with its own content, not a translation. Nationality-based pricing ("Consulta extranjero") must not be published before counsel reviews it.
+4. **English for foreign patients — closed:** one English page with its own content (Francisco, 2026-10-23). No prices, so the nationality-based price question doesn't arise on the site.
 5. **Published prices — closed:** no prices on the site. Service pages send price questions to WhatsApp. This also keeps the nationality-based "Consulta extranjero" price off the site.
 6. **Commercial (HQ):** Site record shows no retainer. Redesign terms and the S8 retainer need to be settled before S4.
 7. **Showcase (HQ):** client consent to be a named reference and to share aggregate numbers; which AIFS brand is credited (blocked by the open InteliMX / AIFactory Health gate). If the next clinic competes locally with UMER, HQ decides whether that conflicts with using UMER as the reference.
@@ -214,8 +215,8 @@ Francisco, 2026-10-23: build the page structure so the next clinic can reuse it.
 ## Open questions
 | # | Question | Who answers | Blocks |
 |---|---|---|---|
-| 1 | Do we target English-speaking foreign residents? | Francisco (HQ) | S1 |
-| 2 | Which WhatsApp number is the site CTA: human line 322 158 2021 or the WABA 311 296 0297 where Sofía runs? And what is 322 308 0404 on the practitioner profiles? | Francisco | S1 conversion paths |
+| 1 | Does 322 308 0404 also take phone calls, or WhatsApp only? Decides whether the site shows a call button | Francisco | S1 conversion paths |
+| 2 | UMER's main Google profile lists 322 158 2021 (human line). Switch it to 322 308 0404 so name, address and phone match the site? | Francisco | S6 |
 | 3 | GBP manager access? (Search Console done 2026-10-23; data pending) | Francisco | Baseline |
 | 4 | WhatsApp conversations started per month, Jul–Oct, from GHL (both numbers) | Francisco | Baseline |
 | 5 | Agree the one-thing sentence | Francisco + doctors | S2 |
@@ -227,3 +228,5 @@ Francisco, 2026-10-23: build the page structure so the next clinic can reuse it.
 | 11 | Redesign terms and retainer | HQ | S4 |
 
 **Closed 2026-10-23** (the doctors, via Francisco): the site shows only the two owners; no relation to Clínica Rentería; references left to us; no prices on the site; photo session deferred, existing photos used meanwhile; the current hero photo is being replaced. Client contact is now the doctors directly; Fany has left.
+
+**Closed 2026-10-23** (Francisco): Spanish site plus one English page; WhatsApp CTA to 322 308 0404, human line not published; hotfix of the current site approved; S1 starts now. The one-thing sentence (question 5) is needed before S2, not S1.
