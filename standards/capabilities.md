@@ -41,6 +41,12 @@ Recheck every quarter.
 | Compression | FFmpeg: H.264 MP4 plus WebM, AVIF/JPG poster, optional frame sequence | Shell |
 | Scroll binding | CSS scroll-driven animations where supported; Motion `scroll()`; GSAP only with a written reason | — |
 
+## Where each tool runs
+
+- **Claude project chats** (cloud workspace): the shell reaches package registries and GitHub only. Higgsfield, fal, 21st.dev and the Astro docs server are not reachable from it (tested 2026-10-23). Use Higgsfield and fal there only as Claude connectors (remote MCP added in Claude's connector settings).
+- **Claude Code on Francisco's machine**: everything works, including the Higgsfield CLI and the 21st.dev plugin. Use it for S2 production sessions and visual iteration.
+- Both read the same repo and Notion, so either can pick up a run where the other left off.
+
 ## Higgsfield
 
 - One account reaches Seedance 2.0, Kling 3.0, Veo 3.1, Sora 2, Wan, MiniMax, Nano Banana Pro and others, billed in credits.
@@ -69,3 +75,4 @@ Recheck every quarter.
 
 - 2026-10-22: v1.
 - 2026-10-22: Higgsfield (video) and 21st.dev (UI components) added, with rules.
+- 2026-10-23: Where each tool runs (cloud chats vs. local Claude Code).
