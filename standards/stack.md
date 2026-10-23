@@ -13,6 +13,8 @@ Version 1 · 2026-10-14 · Owner: Web & SEO
 | Motion | CSS → View Transitions → Motion (`motion`, vanilla API) → GSAP | See `motion.md`. |
 | Languages | Astro i18n routing | Only when one site serves two markets. Separate content, not translation. |
 | Images | Astro `<Picture>` (AVIF/WebP, responsive) | Sources and provenance per `imagery.md`. |
+| AI images and video | fal MCP for stills and retouching; Higgsfield (CLI + skills) for video | Picks, costs and rules in `capabilities.md`. |
+| UI components | 21st.dev (Claude Code plugin or CLI) | Parts bin only, after `direction.md`; rules in `capabilities.md`. |
 | Client-editable content | Keystatic + Keystatic Cloud | Free up to 3 editors per team; content stays in the repo. The admin route needs the Cloudflare adapter; marketing pages stay prerendered. |
 | Forms, booking, reviews | GoHighLevel forms and widgets from the client's sub-account | No custom form backends. |
 | App data (only if needed) | Supabase | Portals, dashboards, auth. |
@@ -47,9 +49,12 @@ A different stack needs a reason written in the Site record's "Stack exception r
 ## Claude Code setup
 
 - MCP servers: Astro Docs (`https://mcp.docs.astro.build/mcp`) and fal (`https://mcp.fal.ai/mcp-relay`). Template in `.mcp.json`; copy it into each site repo.
+- Higgsfield: `npm i -g @higgsfield/cli`, then `higgsfield auth login`. Its skills (`higgsfield-ai/skills`) are reviewed and pinned first, per `VENDOR.md`.
+- 21st.dev: the Claude Code plugin (`/plugin marketplace add 21st-dev/claude-code-plugin`, then `/plugin install 21st@21st`) or `npm i -g @21st-dev/cli` and `21st login`.
 - Skills: `.claude/skills/VENDOR.md`.
 
 ## Changelog
 
 - 2026-10-14: v1. Default moves from "Lovable + Claude Code → Netlify" to "Claude Code + Astro → Cloudflare". Lovable downgraded to Free.
 - 2026-10-22: Added the Lovable Cloud credit dependency and the Netlify legacy-hosting rule.
+- 2026-10-22: Added AI images and video (fal, Higgsfield) and UI components (21st.dev).
