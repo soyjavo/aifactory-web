@@ -124,6 +124,7 @@ Served from `_redirects` in Workers static assets; `trailingSlash: 'always'`. An
 
 | Old URL | New URL | Code |
 |---|---|---|
+| `https://www.umermedical.com/*` | `https://umermedical.com/*` (same path) | 301. Google indexes www today because both hosts serve the site with no redirect (Search Console, 2026-10-24); a single host ends the duplicate |
 | `/especialidades` | `/` | 301 |
 | `/casos-de-exito` | `/` | 301 |
 | `/agendar-cita` | `/contacto/` | 301 |
